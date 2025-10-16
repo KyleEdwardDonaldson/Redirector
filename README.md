@@ -2,7 +2,7 @@
 
 A Firefox extension for managing URL redirections with a modern interface, logging, and advanced features.
 
-**[Download from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/redirector7/)**
+**[Download from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/kedredirector/)**
 
 ## Features
 
