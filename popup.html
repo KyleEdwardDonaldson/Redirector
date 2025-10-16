@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>URL Redirector</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: white;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .stats-summary {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .stat-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .stat-label {
+      color: #6c757d;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .quick-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5568d3;
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #5a6268;
+    }
+
+    .rules-list {
+      margin-top: 16px;
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+    }
+
+    .rule-item {
+      padding: 10px;
+      border-bottom: 1px solid #e9ecef;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .rule-item:last-child {
+      border-bottom: none;
+    }
+
+    .rule-toggle {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .rule-text {
+      flex: 1;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: #495057;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .rule-disabled {
+      opacity: 0.5;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 20px;
+      color: #6c757d;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    .footer {
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-top: 1px solid #dee2e6;
+      font-size: 12px;
+      text-align: center;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>URL Redirector</h1>
+  </div>
+
+  <div class="content">
+    <div class="stats-summary">
+      <div class="stat-item">
+        <span class="stat-label">Active Rules:</span>
+        <span class="stat-value" id="activeRules">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Total Redirects:</span>
+        <span class="stat-value" id="totalRedirects">0</span>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <button class="btn btn-primary" id="openOptions">Manage Rules</button>
+      <button class="btn btn-secondary" id="toggleAll">Disable All Rules</button>
+    </div>
+
+    <div class="rules-list" id="rulesList">
+      <div class="empty-state">No rules configured</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    v2.0 - Quick Access Panel
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

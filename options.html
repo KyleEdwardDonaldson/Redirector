@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>URL Redirector - Options</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>URL Redirector</h1>
+      <p class="subtitle">Manage your URL redirection rules</p>
+    </header>
+
+    <div class="toolbar">
+      <button id="addRule" class="btn btn-primary">+ Add Rule</button>
+      <button id="importRules" class="btn btn-secondary">Import Rules</button>
+      <button id="exportRules" class="btn btn-secondary">Export Rules</button>
+      <button id="clearStats" class="btn btn-danger">Clear Statistics</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <section class="rules-section">
+      <h2>Redirection Rules</h2>
+      <div class="table-container">
+        <table id="rulesTable">
+          <thead>
+            <tr>
+              <th class="col-enabled">Enabled</th>
+              <th class="col-source">Source URL</th>
+              <th class="col-dest">Destination URL</th>
+              <th class="col-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="rulesBody">
+            <tr class="empty-state">
+              <td colspan="4">No rules configured. Click "Add Rule" to create one.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <h2>Redirection Statistics</h2>
+      <div class="table-container">
+        <table id="statsTable">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Destination</th>
+              <th>Count</th>
+              <th>Last Redirect</th>
+            </tr>
+          </thead>
+          <tbody id="statsBody">
+            <tr class="empty-state">
+              <td colspan="4">No redirections yet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <input type="file" id="fileInput" accept=".json" style="display: none;">
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
